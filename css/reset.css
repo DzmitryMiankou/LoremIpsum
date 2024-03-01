@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-ExtraBold";
+  src: url("../fonts/Raleway-ExtraBold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: "Lato-Regular";
+}
+
+a {
+  font-family: "Raleway-ExtraBold";
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}

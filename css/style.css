@@ -1,0 +1,113 @@
+.header {
+  height: 100px;
+  display: grid;
+  place-items: center;
+  background: rgba(16, 16, 29, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
+.header__content {
+  display: grid;
+  grid-template-columns: min-content 435px;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.header__logo {
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.header__sub {
+  color: #43abf0;
+}
+
+.main-nav__list {
+  display: flex;
+  gap: 60px;
+}
+
+.main-nav__link {
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.main-nav__link--active {
+  color: #43abf0;
+}
+
+.main-nav__link:hover {
+  color: #43abf0;
+}
+
+.main {
+  background-image: url("../img/mainimg.jpg");
+  min-height: 400px;
+  height: 90vh;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+.main__content {
+  width: 70%;
+  display: grid;
+  gap: 80px;
+}
+
+.main__title {
+  text-transform: uppercase;
+  width: 770px;
+  font-size: 48px;
+}
+
+.main__content p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.main__button {
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-size: 13px;
+  height: 43px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 183px);
+  gap: 30px;
+}
+
+.main__button--accent {
+  color: white;
+  background: rgba(62, 156, 220, 1);
+  border: 1px solid white;
+  transition: 0.2s;
+}
+
+.main__button--accent:hover {
+  background: rgb(57, 136, 188);
+}
+
+.main__button--sub {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.main__button--sub:hover {
+  background: rgb(236, 236, 236);
+}
+
+section {
+  background-image: url("../img/BG.jpg");
+  min-height: 400px;
+  height: 90vh;
+  background-size: cover;
+}
