@@ -8,8 +8,18 @@
   src: url("../fonts/Raleway-ExtraBold.ttf");
 }
 
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
 :root {
   scroll-behavior: smooth;
+  --color-blue: #43abf0;
+  --color-black: rgba(16, 16, 29, 0.9);
+  --border-size: 70%;
+  --border-size-1200: 90%;
+  --font-size-p: 13px;
 }
 
 * {
