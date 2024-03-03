@@ -4,65 +4,74 @@ window.addEventListener("load", function () {
   start();
 });
 
+const stars = {
+  teg: "div",
+  cont: "&#9733;&#9733;&#9733;&#9733;&#9733;",
+  classNames: "reviews-slider__stars",
+};
+
+const classNameUsers = {
+  classNames: "reviews-slider__names",
+};
+
+const classNameCommit = {
+  classNames: "reviews-slider__commit",
+};
+
 const DATA_CARD = [
   {
     fathEl: "li",
     childEl: [
       [
-        { teg: "div", cont: "*****" },
-        { teg: "div", cont: "Александр" },
+        { ...stars },
         {
+          ...classNameCommit,
           teg: "p",
           cont: "Качество отличное, всё соответствует. Клиенту понравилось.",
         },
+        { ...classNameUsers, teg: "div", cont: "Александр" },
       ],
       [
-        { teg: "div", cont: "*****" },
-        { teg: "div", cont: "Екатерина" },
-        {
-          teg: "p",
-          cont: "Очень порадовала прибыль.",
-        },
+        { ...stars },
+        { ...classNameCommit, teg: "p", cont: "Очень порадовала прибыль." },
+        { ...classNameUsers, teg: "div", cont: "Екатерина" },
       ],
       [
-        { teg: "div", cont: "*****" },
-        { teg: "div", cont: "Сергей" },
+        { ...stars },
         {
+          ...classNameCommit,
           teg: "p",
           cont: "Взял и не пожалел. Полный пакет и за такие деньги. Качесвто лучшее",
         },
+        { ...classNameUsers, teg: "div", cont: "Сергей" },
       ],
       [
-        { teg: "div", cont: "*****" },
-        { teg: "div", cont: "Николай" },
+        { ...stars },
         {
+          ...classNameCommit,
           teg: "p",
           cont: "Пользуюсь уже год и все устраивает.",
         },
+        { ...classNameUsers, teg: "div", cont: "Николай" },
       ],
       [
-        { teg: "div", cont: "*****" },
-        { teg: "div", cont: "Анастасия" },
-        {
-          teg: "p",
-          cont: "Замечательно.",
-        },
+        { ...stars },
+        { ...classNameCommit, teg: "p", cont: "Замечательно." },
+        { ...classNameUsers, teg: "div", cont: "Анастасия" },
       ],
       [
-        { teg: "div", cont: "*****" },
-        { teg: "div", cont: "Федор" },
-        {
-          teg: "p",
-          cont: "Советую покупать.",
-        },
+        { ...stars },
+        { ...classNameCommit, teg: "p", cont: "Советую покупать." },
+        { ...classNameUsers, teg: "div", cont: "Федор" },
       ],
       [
-        { teg: "div", cont: "*****" },
-        { teg: "div", cont: "Даниил" },
+        { ...stars },
         {
+          ...classNameCommit,
           teg: "p",
           cont: "Прекрасный продукт. Качествено и цена хорошая",
         },
+        { ...classNameUsers, teg: "div", cont: "Даниил" },
       ],
     ],
   },
@@ -121,8 +130,9 @@ function generateNavLinkList(className, fatherElem, arr) {
       const father = createElem(fathEl);
       father.className = `${className}`;
       fatherElem.append(father);
-      e.forEach(({ teg, cont }) => {
+      e.forEach(({ teg, cont, classNames }) => {
         const children = createElem(teg);
+        children.className = `${classNames}`;
         children.innerHTML = cont;
         father.append(children);
       });
@@ -138,14 +148,23 @@ function onClickHandler(buttons) {
         ? (SLIDER.scrollLeft += -init)
         : (SLIDER.scrollLeft += init)
     );
-    return () => button.removeEventListener;
   });
 }
 
 let bool = false;
-function openWindow() {
-  bool = !bool;
-  return bool ? addClassName() : deleteClassName();
+function changeBoolean(event) {
+  if (event.target.closest("#" + CLASSNAME_ENUM.SELECT)) {
+    bool = !bool;
+    return bool ? addClassName() : deleteClassName();
+  }
+  if (
+    !event.target.closest("." + CLASSNAME_ENUM.SELECT_WINDOW) &&
+    !event.target.closest("#" + CLASSNAME_ENUM.SELECT) &&
+    bool
+  ) {
+    bool = false;
+    return deleteClassName();
+  }
 }
 
 function start() {
@@ -154,6 +173,8 @@ function start() {
   RANGE.addEventListener("mouseup", (event) =>
     setValueData(".form-slider__text", event.target.value + "%")
   );
-  SELECT.addEventListener("click", () => openWindow());
-  return;
+  window.addEventListener("click", (event) => changeBoolean(event));
+
+  return () =>
+    window.removeEventListener("click", (event) => changeBoolean(event));
 }

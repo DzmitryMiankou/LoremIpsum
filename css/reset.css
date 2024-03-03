@@ -8,6 +8,10 @@
   src: url("../fonts/Raleway-ExtraBold.ttf");
 }
 
+:root {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,12 +36,12 @@ h2,
 h3,
 h4,
 p,
-li {
+li,
+a {
   font-family: "Lato-Regular";
 }
 
 a {
-  font-family: "Raleway-ExtraBold";
   text-decoration: none;
   color: white;
 }
@@ -56,12 +60,10 @@ button {
   background-color: rgba(61, 64, 80, 1);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgba(62, 156, 220, 1);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(54, 122, 168);
 }

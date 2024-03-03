@@ -39,6 +39,7 @@
   text-transform: uppercase;
   font-size: 13px;
   transition: 0.2s;
+  font-family: "Roboto-Regular";
 }
 
 .header-nav__link--active {
@@ -401,6 +402,9 @@ label[data-name="file"]:hover {
   place-items: center;
   min-height: 400px;
   position: relative;
+  padding-bottom: 80px;
+  background-image: url("../img/bg2.jpg");
+  background-size: cover;
 }
 
 .reviews__title {
@@ -412,7 +416,7 @@ label[data-name="file"]:hover {
 }
 
 .reviews-slider {
-  width: 65%;
+  width: 70%;
   margin-bottom: 50px;
   overflow: hidden;
 }
@@ -430,13 +434,12 @@ label[data-name="file"]:hover {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 55%;
+  top: 50%;
   font-size: 15px;
-
-  background-color: #9fd8ff69;
+  background-color: #9fd9ff3a;
   border-radius: 50px;
-  color: #51ace9;
-  border: 2px solid #51ace9;
+  color: #51ace994;
+  border: 2px solid #51a9e425;
   transition: 0.2s;
 }
 
@@ -444,21 +447,88 @@ label[data-name="file"]:hover {
   background-color: #43abf069;
 }
 .reviews-slider__button--start {
-  left: 15%;
+  left: 14%;
 }
 .reviews-slider__button--end {
-  right: 15%;
+  right: 14%;
 }
 
 .reviews-slider__card {
   scroll-snap-align: start;
   height: 200px;
-  background-color: #ecf7ff;
+  background-color: #bcd3e5b0;
   padding: 10px;
   min-width: 300px;
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .reviews__title--accent {
   color: rgb(57, 136, 188);
+}
+
+.reviews-slider__stars {
+  color: rgba(62, 156, 220, 1);
+  font-family: "Roboto-Regular";
+  font-size: 18px;
+}
+
+.reviews-slider__names {
+  text-align: end;
+  font-size: 16px;
+  color: #4688b5;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.reviews-slider__names,
+.reviews-slider__commit {
+  font-family: "Roboto-Regular";
+  font-size: 13px;
+}
+
+.footer {
+  height: 80px;
+  background-color: rgba(61, 64, 80, 1);
+  display: grid;
+  place-items: center;
+}
+
+.footer-items {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-items__copyright {
+  color: rgba(255, 255, 255, 1);
+  font-family: "Roboto-Regular";
+  font-size: 13px;
+}
+
+.footer-items__item {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.footer-items__link--ru {
+  font-family: "Roboto-Regular";
+}
+
+.footer-items__link {
+  color: rgba(195, 195, 195, 1);
+  transition: 0.2s;
+}
+
+.footer-items__link:hover {
+  color: rgb(227, 227, 227);
+}
+
+.footer__border {
+  content: " ";
+  width: 1px;
+  height: 18px;
+  background-color: rgba(195, 195, 195, 1);
 }
