@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script type="module" src="js/script.js"></script>
   </head>
+
   <body>
     <header class="header">
       <div class="header__content">
@@ -185,15 +186,51 @@
           </div>
         </div>
         <form class="form">
-          <select class="form__input" name="select">
-            <option value="" disabled selected hidden>
+          <div class="form-select">
+            <button
+              id="select_button"
+              class="form__input"
+              type="button"
+              name="select"
+            >
               Выберите тип ситемы
-            </option>
-            <option>Sed ut perspiciatis</option>
-            <option>Nemo enim ipsam</option>
-            <option>Et harum quidem</option>
-            <option>Temporibus autem</option></select
-          ><input
+
+              <svg
+                class="form-select__icon"
+                width="9"
+                height="7"
+                viewBox="0 0 9 7"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="form-select__path"
+                  d="M8.93373 5.34847C8.93373 5.4199 8.89801 5.50025 8.84444 5.55382L8.39801 6.00025C8.34444 6.05382 8.26408 6.08954 8.19265 6.08954C8.12123 6.08954 8.04087 6.05382 7.9873 6.00025L4.47837 2.49132L0.969439 6.00025C0.915867 6.05382 0.83551 6.08954 0.764082 6.08954C0.683725 6.08954 0.612296 6.05382 0.558725 6.00025L0.112296 5.55382C0.0587246 5.50025 0.0230103 5.4199 0.0230103 5.34847C0.0230103 5.27704 0.0587246 5.19668 0.112296 5.14311L4.27301 0.982396C4.32658 0.928824 4.40694 0.89311 4.47837 0.89311C4.5498 0.89311 4.63015 0.928824 4.68372 0.982396L8.84444 5.14311C8.89801 5.19668 8.93373 5.27704 8.93373 5.34847Z"
+                />
+              </svg>
+            </button>
+            <div class="form-select__window">
+              <ul class="form-select__list">
+                <li class="form-select__item">Sed ut perspiciatis</li>
+                <li class="form-select__item">Nemo enim ipsam</li>
+                <li class="form-select__item">Et harum quidem</li>
+                <li class="form-select__item">Temporibus autem</li>
+                <li class="form-select__item">Sed ut perspiciatis</li>
+                <li class="form-select__item">Nemo enim ipsam</li>
+                <li class="form-select__item">Et harum quidem</li>
+                <li class="form-select__item">Temporibus autem</li>
+                <li class="form-select__item">Nemo enim ipsam</li>
+                <li class="form-select__item">Et harum quidem</li>
+                <li class="form-select__item">Temporibus autem</li>
+                <li class="form-select__item">Nemo enim ipsam</li>
+                <li class="form-select__item">Et harum quidem</li>
+                <li class="form-select__item">Temporibus autem</li>
+                <li class="form-select__item">Nemo enim ipsam</li>
+                <li class="form-select__item">Et harum quidem</li>
+                <li class="form-select__item">Temporibus autem</li>
+              </ul>
+            </div>
+          </div>
+          <input
             class="form__input"
             name="email"
             placeholder="Ваш e-mail"
@@ -205,7 +242,63 @@
             type="text"
             placeholder="Ваше имя"
           />
+          <div class="form-slider">
+            <div class="form-slider__content">
+              <p>Sed ut perspiciatis, unde omnis iste natus</p>
+              <p class="form-slider__text">75%</p>
+            </div>
+            <input
+              name="form__range"
+              type="range"
+              min="1"
+              max="100"
+              value="75"
+              class="slider"
+              id="myRange"
+            />
+          </div>
+          <label class="form__input" data-name="file" for="file-input">
+            <svg
+              width="18"
+              height="21"
+              viewBox="0 0 18 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.8125 4.60899L13.3304 1.12685C12.9174 0.713902 12.0915 0.36792 11.5 0.36792H1.50002C0.9085 0.36792 0.428589 0.847831 0.428589 1.43935V19.2965C0.428589 19.888 0.9085 20.3679 1.50002 20.3679H16.5C17.0915 20.3679 17.5714 19.888 17.5714 19.2965V6.43935C17.5714 5.84783 17.2255 5.02194 16.8125 4.60899ZM11.8572 1.88578C12.0469 1.95274 12.2366 2.05319 12.3148 2.13131L15.8081 5.62462C15.8862 5.70274 15.9866 5.89247 16.0536 6.08221H11.8572V1.88578ZM16.1429 18.9394H1.85716V1.79649H10.4286V6.43935C10.4286 7.03087 10.9085 7.51078 11.5 7.51078H16.1429V18.9394ZM4.7143 9.29649V10.0108C4.7143 10.2117 4.87055 10.3679 5.07145 10.3679H12.9286C13.1295 10.3679 13.2857 10.2117 13.2857 10.0108V9.29649C13.2857 9.0956 13.1295 8.93935 12.9286 8.93935H5.07145C4.87055 8.93935 4.7143 9.0956 4.7143 9.29649ZM12.9286 11.7965H5.07145C4.87055 11.7965 4.7143 11.9527 4.7143 12.1536V12.8679C4.7143 13.0688 4.87055 13.2251 5.07145 13.2251H12.9286C13.1295 13.2251 13.2857 13.0688 13.2857 12.8679V12.1536C13.2857 11.9527 13.1295 11.7965 12.9286 11.7965ZM12.9286 14.6536H5.07145C4.87055 14.6536 4.7143 14.8099 4.7143 15.0108V15.7251C4.7143 15.926 4.87055 16.0822 5.07145 16.0822H12.9286C13.1295 16.0822 13.2857 15.926 13.2857 15.7251V15.0108C13.2857 14.8099 13.1295 14.6536 12.9286 14.6536Z"
+                fill="#272733"
+              />
+            </svg>
+            Прикрепить файл
+          </label>
+          <input id="file-input" name="file" type="file" />
+          <button class="form__input" name="button" type="submit">
+            Отправить
+          </button>
         </form>
+      </div>
+    </section>
+    <section class="reviews">
+      <h3 class="reviews__title">
+        <span class="reviews__title--accent">отзывы</span> клиентов
+      </h3>
+      <button
+        id="left"
+        class="reviews-slider__button reviews-slider__button--start"
+        type="button"
+      >
+        &#11207;
+      </button>
+      <button
+        id="right"
+        class="reviews-slider__button reviews-slider__button--end"
+        type="button"
+      >
+        &#11208;
+      </button>
+      <div class="reviews-slider">
+        <ul class="reviews-slider__content"></ul>
       </div>
     </section>
   </body>
