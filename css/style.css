@@ -11,6 +11,7 @@
   position: fixed;
   width: 100%;
   top: 0px;
+  z-index: 99;
 }
 
 .header__content {
@@ -172,6 +173,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 4vw;
   margin-top: 80px;
   flex-wrap: wrap;
 }
@@ -180,6 +182,16 @@
   gap: 20px;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.icon-content:nth-child(n + 2)::after {
+  content: ". . . . .";
+  font-size: 3vw;
+  color: rgba(196, 196, 196, 1);
+  position: absolute;
+  left: -5.6vw;
+  bottom: 57%;
 }
 
 .icon {
@@ -520,10 +532,14 @@ label[data-name="file"]:hover {
 .footer-items__link {
   color: rgba(195, 195, 195, 1);
   transition: 0.2s;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, max-content);
+  gap: 10px;
 }
 
 .footer-items__link:hover {
-  color: rgb(227, 227, 227);
+  filter: contrast(200%);
 }
 
 .footer__border {
