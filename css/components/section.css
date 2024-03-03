@@ -79,10 +79,10 @@
 }
 
 .form {
+  display: grid;
   margin-top: 80px;
   gap: 10px;
   row-gap: 30px;
-  display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 22vw);
   grid-template-rows: repeat(2, 48px);
@@ -92,8 +92,6 @@
 .form-slider {
   grid-column-start: 1;
   grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
 }
 
 .form__input {
@@ -223,8 +221,6 @@ label[data-name="file"] {
   gap: 10px;
   grid-column-start: 3;
   grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
 }
 
 label[data-name="file"]:hover {
@@ -279,5 +275,24 @@ label[data-name="file"]:hover {
 @media only screen and (max-width: 1200px) {
   .section__content {
     width: var(--border-size-1200);
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .form-slider {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  label[data-name="file"] {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .form__input[name="button"] {
+    width: 100%;
   }
 }
