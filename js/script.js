@@ -165,11 +165,17 @@ function generateNavLinkList(className, fatherElem, arr) {
 const init = 500;
 function onClickHandler(buttons) {
   buttons.forEach((button) => {
-    button.addEventListener(whatEventUse, (event) =>
+    button.addEventListener(whatEventUse, (event) => {
+      BUTTONS_SLIDER[0].style.display =
+        SLIDER.scrollLeft <= 0 ? "none" : "block";
+      BUTTONS_SLIDER[1].style.display =
+        SLIDER.scrollLeft >= SLIDER.scrollWidth - SLIDER.clientWidth
+          ? "none"
+          : "block";
       event.target.id === "left"
         ? (SLIDER.scrollLeft += -init)
-        : (SLIDER.scrollLeft += init)
-    );
+        : (SLIDER.scrollLeft += init);
+    });
   });
 }
 
