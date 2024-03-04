@@ -196,6 +196,8 @@ function start() {
     setValueData(".form-slider__text", event.target.value + "%")
   );
   window.addEventListener("click", (event) => changeBoolean(event));
+  window.addEventListener("touchstart", (event) => changeBoolean(event));
+  window.addEventListener("touchend", (event) => changeBoolean(event));
 
   return () => {
     RANGE.removeEventListener("input", (event) =>
