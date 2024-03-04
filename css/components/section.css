@@ -30,7 +30,7 @@
 }
 
 .section__content {
-  width: 70%;
+  width: var(--border-size);
   display: grid;
   place-items: center;
 }

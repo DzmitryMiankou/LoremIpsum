@@ -6,7 +6,7 @@
 }
 
 .footer-items {
-  width: 70%;
+  width: var(--border-size);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +21,7 @@
 
 .footer-items__item {
   font-weight: 400;
-  font-size: 13px;
+  font-size: var(--font-size-p);
 }
 
 .footer-items__link--ru {
