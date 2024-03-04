@@ -79,6 +79,12 @@
   background: rgb(236, 236, 236);
 }
 
+@media only screen and (max-width: 1200px) {
+  .main-content {
+    width: var(--border-size-1200);
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .main {
     background-image: url("../../img/mobmain.jpg");
