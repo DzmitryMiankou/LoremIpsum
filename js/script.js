@@ -136,6 +136,8 @@ const addClassName = () => {
   SELECT_WINDOW.classList.add(CLASSNAME_ENUM.SELECT_WINDOW + "--active");
 };
 
+const whatDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+const whatEventUse = whatDevice ? "touchstart" : "click";
 const createElem = (elem) => document.createElement(elem);
 const setValueData = (className, value) =>
   (document.querySelector(className).innerHTML = value);
@@ -160,7 +162,7 @@ function generateNavLinkList(className, fatherElem, arr) {
 const init = 500;
 function onClickHandler(buttons) {
   buttons.forEach((button) => {
-    button.addEventListener("click", (event) =>
+    button.addEventListener(whatEventUse, (event) =>
       event.target.id === "left"
         ? (SLIDER.scrollLeft += -init)
         : (SLIDER.scrollLeft += init)
@@ -215,8 +217,6 @@ function openHeaderMenu(event) {
     return () => clearTimeout(timer);
   }
 }
-const whatDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
-const whatEventUse = whatDevice ? "touchstart" : "click";
 
 function start() {
   generateNavLinkList("reviews-slider__card", SLIDER, DATA_CARD);
@@ -228,7 +228,6 @@ function start() {
     changeBoolean(event);
     openHeaderMenu(event);
   });
-  //HEADER_BUTTON.addEventListener(whatEventUse, () => openHeaderMenu());
 
   return () => {
     RANGE.removeEventListener("input", (event) =>
