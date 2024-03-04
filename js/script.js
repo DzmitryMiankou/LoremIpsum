@@ -150,9 +150,12 @@ function generateNavLinkList(className, fatherElem, arr) {
       fatherElem.append(father);
       e.forEach(({ teg, cont, classNames }) => {
         const children = createElem(teg);
-        if (teg === "img") children.src = cont;
+        if (teg === "img") {
+          children.src = cont;
+          children.alt = "reviews__img";
+        }
+        if (teg !== "img") children.innerHTML = cont;
         children.className = `${classNames}`;
-        children.innerHTML = cont;
         father.append(children);
       });
     });
