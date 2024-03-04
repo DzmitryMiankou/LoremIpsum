@@ -193,13 +193,16 @@ function changeBoolean(event) {
 }
 
 let openW = false;
-function openHeaderMenu(params) {
-  openW = !openW;
-  if (openW) {
+function openHeaderMenu(event) {
+  if (event.target.closest("." + "header__button")) {
+    openW = !openW;
     HEADER_NAV.classList.add("header-nav" + "--active");
     HEADER_BLUER.classList.add("header__bluer" + "--active");
   }
-  if (!openW) {
+  if (
+    event.target.closest(".header__bluer") ||
+    event.target.closest(".header-nav__list")
+  ) {
     openW = false;
     const timer = setTimeout(() => {
       HEADER_NAV.classList.remove("header-nav" + "--active");
@@ -221,11 +224,12 @@ function start() {
   RANGE.addEventListener("input", (event) =>
     setValueData(".form-slider__text", event.target.value + "%")
   );
-  window.addEventListener(whatEventUse, (event) => changeBoolean(event));
-  HEADER_BUTTON.addEventListener(whatEventUse, () => openHeaderMenu());
-  document
-    .querySelector(".header__bluer")
-    .addEventListener(whatEventUse, () => openHeaderMenu());
+  window.addEventListener(whatEventUse, (event) => {
+    changeBoolean(event);
+    openHeaderMenu(event);
+  });
+  //HEADER_BUTTON.addEventListener(whatEventUse, () => openHeaderMenu());
+
   return () => {
     RANGE.removeEventListener("input", (event) =>
       setValueData(".form-slider__text", event.target.value + "%")

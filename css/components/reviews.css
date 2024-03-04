@@ -33,26 +33,27 @@
   scroll-behavior: smooth;
 }
 .reviews-slider__button {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: 50%;
-  fill: var(--color-blue);
+  top: 47%;
+  font-size: 15px;
+  background-color: #9fd9ff3a;
+  border-radius: 50px;
+  color: #097dca94;
+  border: 2px solid #51a9e425;
   transition: 0.2s;
 }
 
 .reviews-slider__button:hover {
-  fill: #00406a;
+  background-color: #ffffff;
+  color: #007ed2;
 }
 .reviews-slider__button--start {
   left: 14%;
 }
 .reviews-slider__button--end {
   right: 14%;
-}
-
-.reviews-slider__arrow--left {
-  rotate: 180deg;
 }
 
 .reviews-slider__card {
