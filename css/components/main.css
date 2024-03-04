@@ -90,6 +90,7 @@
     width: auto;
     font-size: 36px;
     text-align: center;
+    margin-top: 80px;
   }
 
   .main-text__title,
@@ -106,7 +107,7 @@
   .main-content__title {
     font-size: 27px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 120px;
   }
   .main-list {
     padding-left: 13px;

@@ -335,7 +335,7 @@ label[data-name="file"]:hover {
 
 @media only screen and (max-width: 960px) {
   .icons {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .form-slider {
     grid-column-start: 1;
@@ -353,6 +353,17 @@ label[data-name="file"]:hover {
   .form__input[name="button"] {
     width: 100%;
   }
+  .icon-content:nth-child(2n)::after {
+    content: ". . . . .";
+    font-size: 55px;
+    color: rgba(196, 196, 196, 1);
+    position: absolute;
+    bottom: 57%;
+    left: -9vw;
+  }
+  .icon-content:nth-child(odd)::after {
+    content: " ";
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -366,11 +377,13 @@ label[data-name="file"]:hover {
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .form {
-    width: 80%;
+@media only screen and (max-width: 570px) {
+  .icon-content:nth-child(2n)::after {
+    left: -12vw;
   }
+}
 
+@media only screen and (max-width: 450px) {
   .icon {
     width: 60px;
     height: 60px;
@@ -379,5 +392,17 @@ label[data-name="file"]:hover {
   .icon__text {
     font-size: 13px;
     width: auto;
+  }
+  .icon-content:nth-child(2n)::after {
+    font-size: 40px;
+    left: -12vw;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .icon-content:nth-child(2n)::after {
+    content: ". . . .";
+    left: -11vw;
+    font-size: 30;
   }
 }

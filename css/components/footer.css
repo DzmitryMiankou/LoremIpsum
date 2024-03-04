@@ -69,7 +69,7 @@
     padding: 20px;
   }
   .footer-items {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
   }
 }
