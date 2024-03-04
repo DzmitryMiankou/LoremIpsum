@@ -80,8 +80,14 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .main-content {
-    width: var(--border-size-1200);
+  .main {
+    background-image: url("../../img/mobmain.jpg");
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main {
+    background-image: url("../../img/mobmain.jpg");
   }
 }
 
