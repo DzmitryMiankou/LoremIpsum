@@ -1,3 +1,43 @@
+@keyframes bluerAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bluerAnimClouse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes openMenu {
+  0% {
+    transform: translate(200px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes cluseMenu {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(200px, 0);
+    opacity: 0;
+  }
+}
+
 .header {
   display: grid;
   place-items: center;
@@ -18,10 +58,19 @@
   background-color: rgba(0, 0, 0, 0.461);
   backdrop-filter: blur(2px);
   display: none;
+  animation-name: bluerAnim;
+  animation-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 
 .header__bluer--active {
   display: block;
+}
+
+.header__bluer--clouse {
+  animation-name: bluerAnimClouse;
+  animation-duration: 400ms;
+  transition-timing-function: ease-out;
 }
 
 .header__button {
@@ -85,6 +134,15 @@
   }
   .header-nav--active {
     display: block;
+    animation-name: openMenu;
+    animation-duration: 300ms;
+    transition-timing-function: ease-in;
+  }
+
+  .header-nav--clouse {
+    animation-name: cluseMenu;
+    animation-duration: 400ms;
+    transition-timing-function: ease-out;
   }
   .header-nav__list {
     display: flex;

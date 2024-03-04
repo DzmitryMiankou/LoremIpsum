@@ -113,6 +113,7 @@ const SELECT_ICON = document.querySelector("." + CLASSNAME_ENUM.SELECT_ICON);
 const SELECT_PATH = document.querySelector("." + CLASSNAME_ENUM.SELECT_PATH);
 const HEADER_BUTTON = document.querySelector("." + "header__button");
 const HEADER_NAV = document.querySelector("." + "header-nav");
+const HEADER_BLUER = document.querySelector(".header__bluer");
 
 const deleteClassName = () => {
   const timer = setTimeout(() => {
@@ -196,18 +197,21 @@ function openHeaderMenu(params) {
   openW = !openW;
   if (openW) {
     HEADER_NAV.classList.add("header-nav" + "--active");
-    document
-      .querySelector(".header__bluer")
-      .classList.add("header__bluer" + "--active");
+    HEADER_BLUER.classList.add("header__bluer" + "--active");
   }
   if (!openW) {
-    HEADER_NAV.classList.remove("header-nav" + "--active");
-    document
-      .querySelector(".header__bluer")
-      .classList.remove("header__bluer" + "--active");
+    openW = false;
+    const timer = setTimeout(() => {
+      HEADER_NAV.classList.remove("header-nav" + "--active");
+      HEADER_BLUER.classList.remove("header__bluer" + "--active");
+      HEADER_BLUER.classList.remove("header__bluer--clouse");
+      HEADER_NAV.classList.remove("header-nav--clouse");
+    }, 300);
+    HEADER_BLUER.classList.add("header__bluer--clouse");
+    HEADER_NAV.classList.add("header-nav--clouse");
+    return () => clearTimeout(timer);
   }
 }
-
 const whatDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
 const whatEventUse = whatDevice ? "touchstart" : "click";
 

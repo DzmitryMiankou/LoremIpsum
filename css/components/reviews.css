@@ -138,3 +138,13 @@ input[type="range"]::-moz-range-thumb {
     font-size: 27px;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .reviews__title {
+    font-size: 27px;
+  }
+  .reviews-slider__card {
+    min-width: 220px;
+    max-width: auto;
+  }
+}

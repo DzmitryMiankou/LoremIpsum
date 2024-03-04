@@ -1,3 +1,25 @@
+@keyframes openAnim {
+  0% {
+    transform: translate(0, -50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes clouseAnim {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -50px);
+    opacity: 0;
+  }
+}
+
 .section {
   background-image: url("../../img/BG.jpg");
   min-height: 400px;
@@ -140,28 +162,6 @@
 
 .form-select__path--active {
   fill: rgb(255, 255, 255);
-}
-
-@keyframes openAnim {
-  0% {
-    transform: translate(0, -50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes clouseAnim {
-  0% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, -50px);
-    opacity: 0;
-  }
 }
 
 .form-select__window {
