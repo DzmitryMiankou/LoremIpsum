@@ -173,11 +173,11 @@ function changeBoolean(event) {
       "#" + CLASSNAME_ENUM.SELECT_BUTTON_TEXT,
       event.target.textContent
     );
-    return deleteClassName();
+    deleteClassName();
   }
   if (event.target.closest("#" + CLASSNAME_ENUM.SELECT)) {
     bool = !bool;
-    return bool ? addClassName() : deleteClassName();
+    bool ? addClassName() : deleteClassName();
   }
   if (
     !event.target.closest("." + CLASSNAME_ENUM.SELECT_WINDOW) &&
@@ -185,7 +185,7 @@ function changeBoolean(event) {
     bool
   ) {
     bool = false;
-    return deleteClassName();
+    deleteClassName();
   }
 }
 
