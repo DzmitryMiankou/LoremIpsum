@@ -189,19 +189,21 @@ function changeBoolean(event) {
   }
 }
 
+const whatDevice2 = /iPad|iPhone|iPod/.test(navigator.userAgent);
+let whatEventUse2 = whatDevice2 ? "touchstart" : "click";
+
 function start() {
   generateNavLinkList("reviews-slider__card", SLIDER, DATA_CARD);
   onClickHandler(BUTTONS_SLIDER);
   RANGE.addEventListener("input", (event) =>
     setValueData(".form-slider__text", event.target.value + "%")
   );
-  window.addEventListener("click", (event) => changeBoolean(event));
-  window.addEventListener("touchstart", (event) => changeBoolean(event));
+  window.addEventListener(whatEventUse2, (event) => changeBoolean(event));
 
   return () => {
     RANGE.removeEventListener("input", (event) =>
       setValueData(".form-slider__text", event.target.value + "%")
     );
-    window.removeEventListener("click", (event) => changeBoolean(event));
+    window.removeEventListener(whatEventUse2, (event) => changeBoolean(event));
   };
 }
