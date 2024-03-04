@@ -9,6 +9,25 @@
   z-index: 99;
 }
 
+.header__bluer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.461);
+  backdrop-filter: blur(2px);
+  display: none;
+}
+
+.header__bluer--active {
+  display: block;
+}
+
+.header__button {
+  display: none;
+}
+
 .header-logo__link {
   font-size: 28px;
   font-weight: 800;
@@ -59,12 +78,19 @@
     right: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.904);
-    padding: 10px;
-    width: 50vw;
+    padding: 40px;
+    width: 50%;
     height: 100vh;
+    z-index: 99;
+  }
+  .header-nav--active {
+    display: block;
   }
   .header-nav__list {
     display: flex;
     flex-direction: column;
+  }
+  .header__button {
+    display: block;
   }
 }

@@ -111,6 +111,8 @@ const BUTTONS_SLIDER = document.querySelectorAll(
 );
 const SELECT_ICON = document.querySelector("." + CLASSNAME_ENUM.SELECT_ICON);
 const SELECT_PATH = document.querySelector("." + CLASSNAME_ENUM.SELECT_PATH);
+const HEADER_BUTTON = document.querySelector("." + "header__button");
+const HEADER_NAV = document.querySelector("." + "header-nav");
 
 const deleteClassName = () => {
   const timer = setTimeout(() => {
@@ -189,8 +191,25 @@ function changeBoolean(event) {
   }
 }
 
-const whatDevice2 = /iPad|iPhone|iPod/.test(navigator.userAgent);
-let whatEventUse2 = whatDevice2 ? "touchstart" : "click";
+let openW = false;
+function openHeaderMenu(params) {
+  openW = !openW;
+  if (openW) {
+    HEADER_NAV.classList.add("header-nav" + "--active");
+    document
+      .querySelector(".header__bluer")
+      .classList.add("header__bluer" + "--active");
+  }
+  if (!openW) {
+    HEADER_NAV.classList.remove("header-nav" + "--active");
+    document
+      .querySelector(".header__bluer")
+      .classList.remove("header__bluer" + "--active");
+  }
+}
+
+const whatDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+const whatEventUse = whatDevice ? "touchstart" : "click";
 
 function start() {
   generateNavLinkList("reviews-slider__card", SLIDER, DATA_CARD);
@@ -198,12 +217,15 @@ function start() {
   RANGE.addEventListener("input", (event) =>
     setValueData(".form-slider__text", event.target.value + "%")
   );
-  window.addEventListener(whatEventUse2, (event) => changeBoolean(event));
-
+  window.addEventListener(whatEventUse, (event) => changeBoolean(event));
+  HEADER_BUTTON.addEventListener(whatEventUse, () => openHeaderMenu());
+  document
+    .querySelector(".header__bluer")
+    .addEventListener(whatEventUse, () => openHeaderMenu());
   return () => {
     RANGE.removeEventListener("input", (event) =>
       setValueData(".form-slider__text", event.target.value + "%")
     );
-    window.removeEventListener(whatEventUse2, (event) => changeBoolean(event));
+    window.removeEventListener(whatEventUse, (event) => changeBoolean(event));
   };
 }

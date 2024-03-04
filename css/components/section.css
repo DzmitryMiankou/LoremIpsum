@@ -297,7 +297,8 @@ label[data-name="file"]:hover {
 @media only screen and (max-width: 1560px) {
   .icon-content:nth-child(n + 2)::after {
     font-size: 55px;
-    left: -5.4vw;
+    left: -5.2vw;
+    bottom: 60%;
   }
 }
 
