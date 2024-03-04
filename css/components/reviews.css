@@ -37,22 +37,22 @@
   height: 30px;
   position: absolute;
   top: 50%;
-  font-size: 15px;
-  background-color: #9fd9ff3a;
-  border-radius: 50px;
-  color: #51ace994;
-  border: 2px solid #51a9e425;
+  fill: var(--color-blue);
   transition: 0.2s;
 }
 
 .reviews-slider__button:hover {
-  background-color: #43abf069;
+  fill: #00406a;
 }
 .reviews-slider__button--start {
   left: 14%;
 }
 .reviews-slider__button--end {
   right: 14%;
+}
+
+.reviews-slider__arrow--left {
+  rotate: 180deg;
 }
 
 .reviews-slider__card {
