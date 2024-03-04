@@ -14,6 +14,7 @@
   font-family: "Roboto-Regular";
   margin-bottom: 50px;
   margin-top: 50px;
+  text-align: center;
 }
 
 .reviews-slider {
@@ -111,59 +112,6 @@
   font-size: 13px;
 }
 
-@media only screen and (max-width: 1760px) {
-  .main__title {
-    margin-top: 100px;
-  }
-  .icons {
-    gap: 2vw;
-  }
-  .icon {
-    width: 80px;
-    height: 80px;
-  }
-  .icon__text {
-    width: 180px;
-  }
-  .icon-content:nth-child(n + 2)::after {
-    left: -5vw;
-  }
-}
-
-@media only screen and (max-width: 1560px) {
-  .icon-content:nth-child(n + 2)::after {
-    font-size: 55px;
-    left: -5.4vw;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
-  .icons {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .icon-content:nth-child(5)::after {
-    content: "";
-  }
-
-  .icon-content:nth-child(6)::after {
-    content: ". . . . .";
-    font-size: 55px;
-    color: rgba(196, 196, 196, 1);
-    position: absolute;
-    bottom: 57%;
-    left: -5.4vw;
-  }
-
-  .icon-content::after {
-    content: ". . . . .";
-    font-size: 55px;
-    color: rgba(196, 196, 196, 1);
-    position: absolute;
-    bottom: 57%;
-    left: -5.4vw;
-  }
-}
-
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -183,4 +131,10 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 20px;
   cursor: pointer;
   border: solid 3px rgba(40, 102, 144, 1);
+}
+
+@media only screen and (max-width: 850px) {
+  .reviews__title {
+    font-size: 27px;
+  }
 }

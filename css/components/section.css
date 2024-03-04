@@ -221,6 +221,7 @@ label[data-name="file"] {
   gap: 10px;
   grid-column-start: 3;
   grid-column-end: 4;
+  text-align: center;
 }
 
 label[data-name="file"]:hover {
@@ -266,10 +267,64 @@ label[data-name="file"]:hover {
   color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
   transition: 0.2s;
+  text-align: center;
 }
 
 .form__input[name="button"]:hover {
   background: rgb(57, 136, 188);
+}
+
+@media only screen and (max-width: 1760px) {
+  .main__title {
+    margin-top: 100px;
+  }
+  .icons {
+    gap: 2vw;
+  }
+  .icon {
+    width: 80px;
+    height: 80px;
+  }
+  .icon__text {
+    width: 180px;
+  }
+  .icon-content:nth-child(n + 2)::after {
+    left: -5vw;
+  }
+}
+
+@media only screen and (max-width: 1560px) {
+  .icon-content:nth-child(n + 2)::after {
+    font-size: 55px;
+    left: -5.4vw;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .icons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .icon-content:nth-child(5)::after {
+    content: "";
+  }
+
+  .icon-content:nth-child(6)::after {
+    content: ". . . . .";
+    font-size: 55px;
+    color: rgba(196, 196, 196, 1);
+    position: absolute;
+    bottom: 57%;
+    left: -5.4vw;
+  }
+
+  .icon-content::after {
+    content: ". . . . .";
+    font-size: 55px;
+    color: rgba(196, 196, 196, 1);
+    position: absolute;
+    bottom: 57%;
+    left: -5.4vw;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -279,6 +334,9 @@ label[data-name="file"]:hover {
 }
 
 @media only screen and (max-width: 960px) {
+  .icons {
+    grid-template-columns: 1fr 1fr;
+  }
   .form-slider {
     grid-column-start: 1;
     grid-column-end: 2;
@@ -294,5 +352,32 @@ label[data-name="file"]:hover {
   }
   .form__input[name="button"] {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .section__title {
+    font-size: 27px;
+    text-align: center;
+  }
+  .section__warning {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .form {
+    width: 80%;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon__text {
+    font-size: 13px;
+    width: auto;
   }
 }

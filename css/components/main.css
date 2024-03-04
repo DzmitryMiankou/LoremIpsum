@@ -84,3 +84,35 @@
     width: var(--border-size-1200);
   }
 }
+
+@media only screen and (max-width: 850px) {
+  .main-content__title {
+    width: auto;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .main-text__title,
+  .main-list {
+    text-align: center;
+  }
+  .main-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .main-content__title {
+    font-size: 27px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .main-list {
+    padding-left: 13px;
+  }
+
+  .main-list__item {
+    font-size: 16px;
+  }
+}
