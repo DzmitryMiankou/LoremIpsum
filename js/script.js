@@ -162,16 +162,20 @@ function generateNavLinkList(className, fatherElem, arr) {
   });
 }
 
+const controlButtom = () => {
+  console.log(SLIDER.scrollLeft);
+  BUTTONS_SLIDER[0].style.display = SLIDER.scrollLeft <= 0 ? "none" : "block";
+  BUTTONS_SLIDER[1].style.display =
+    SLIDER.scrollLeft >= SLIDER.scrollWidth - SLIDER.clientWidth
+      ? "none"
+      : "block";
+};
+
 const init = 500;
 function onClickHandler(buttons) {
   buttons.forEach((button) => {
     button.addEventListener(whatEventUse, (event) => {
-      BUTTONS_SLIDER[0].style.display =
-        SLIDER.scrollLeft <= 0 ? "none" : "block";
-      BUTTONS_SLIDER[1].style.display =
-        SLIDER.scrollLeft >= SLIDER.scrollWidth - SLIDER.clientWidth
-          ? "none"
-          : "block";
+      controlButtom();
       event.target.id === "left"
         ? (SLIDER.scrollLeft += -init)
         : (SLIDER.scrollLeft += init);
