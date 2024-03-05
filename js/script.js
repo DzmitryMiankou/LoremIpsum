@@ -163,7 +163,6 @@ function generateNavLinkList(className, fatherElem, arr) {
 }
 
 const controlButtom = () => {
-  console.log(SLIDER.scrollLeft);
   BUTTONS_SLIDER[0].style.display = SLIDER.scrollLeft <= 0 ? "none" : "block";
   BUTTONS_SLIDER[1].style.display =
     SLIDER.scrollLeft >= SLIDER.scrollWidth - SLIDER.clientWidth
